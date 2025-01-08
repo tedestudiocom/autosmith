@@ -1,3 +1,5 @@
+import Footer from "@/components/footer";
+import Header from "@/components/header";
 import SearchBar from "@/components/search-bar";
 import ServiceCard from "@/components/service-card";
 import { defaultservice } from "@/constants/constants";
@@ -6,9 +8,10 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="">
+      <Header />
       <div className="flex w-full justify-between items-start gap-12 px-8">
         <div className="flex flex-col gap-8 w-fit">
-          <h2 className="text-7xl text-secondary font-[900] leading-[1.3] text-left">
+          <h2 className="text-6xl text-secondary font-[900] leading-[1.3] text-left">
             Professional <br />{" "}
             <span className="text-tertiary">Motorcycle</span> Services <br />
             <span className="text-primary">at your Doorstep</span>
@@ -86,6 +89,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <Footer />
     </main>
   );
 }
