@@ -1,101 +1,91 @@
+import SearchBar from "@/components/search-bar";
+import ServiceCard from "@/components/service-card";
+import { defaultservice } from "@/constants/constants";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="">
+      <div className="flex w-full justify-between items-start gap-12 px-8">
+        <div className="flex flex-col gap-8 w-fit">
+          <h2 className="text-7xl text-secondary font-[900] leading-[1.3] text-left">
+            Professional <br />{" "}
+            <span className="text-tertiary">Motorcycle</span> Services <br />
+            <span className="text-primary">at your Doorstep</span>
+          </h2>
+          <SearchBar></SearchBar>
+          <div className="grid gap-6 grid-flow-row-dense grid-cols-4">
+            {Array.from({ length: 8 }).map((_, index) => (
+              <ServiceCard key={index} service={defaultservice} />
+            ))}
+          </div>
+          <div className="relative items-center justify-center flex">
+            <a
+              className="text-center text-primary text-opacity-75 px-2 bg-white hover:text-opacity-100 duration-200 w-fit self-center"
+              href="/services"
+            >
+              view all
+            </a>
+            <hr className="w-full absolute -z-10" />
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+        <div className="-z-10 top-12 right-12">
+          <div className="flex items-end justify-end">
+            <img
+              className="rounded-full float-end place-self-end w-8/12"
+              src="/carousel-one.jpg"
+              alt=""
+            />
+            <img
+              className="rounded-full float-end place-self-start w-4/12"
+              src="/carousel-two.jpg"
+              alt=""
+            />
+          </div>
+          <img
+            className="rounded-full float-end place-self-end w-5/12 -mt-32"
+            src="/carousel-four.jpg"
+            alt=""
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+          <img
+            className="rounded-full float-start place-self-start w-5/12 m-6"
+            src="/carousel-three.jpg"
+            alt=""
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        </div>
+      </div>
+      <div className="h-screen py-24 relative">
+        <div className="w-fit items-end flex flex-col gap-2 px-8">
+          <h2 className="text-6xl text-primary font-[900]">
+            Professional. <span className="text-secondary">Reliable.</span>{" "}
+            <span className="text-tertiary">Trustworthy.</span>
+          </h2>
+          <hr className="w-5/12 border-secondary" />
+          <p className="text-secondary items-center flex gap-[0.3rem] text-end">
+            the reasons for chosing{" "}
+            <img className="h-[0.8em]" src="/logo.svg" alt="" />
+          </p>
+        </div>
+        <div className="absolute -z-10 top-0 left-0">
+          <div className="relative">
+            <video
+              autoPlay
+              loop
+              muted
+              className="h-screen w-screen object-fill"
+            >
+              <source src="/showreel.mp4" />
+            </video>
+            <div
+              id="videogradient"
+              className="flex w-full h-full absolute top-0 z-10 bg-black"
+            ></div>
+            {/* <p className="absolute z-20 right-6 bottom-6 text-secondary">
+              scroll more, a little is left
+            </p> */}
+          </div>
+        </div>
+      </div>
+    </main>
   );
 }
