@@ -1,0 +1,40 @@
+[08-Nov-2024 18:37:43 UTC] PHP Warning:  Array to string conversion in /Applications/MAMP/htdocs/wp-content/plugins/astra-sites/inc/importers/batch-processing/class-astra-sites-batch-processing-elementor.php on line 110
+[08-Nov-2024 18:37:43 UTC] PHP Warning:  Array to string conversion in /Applications/MAMP/htdocs/wp-content/plugins/astra-sites/inc/importers/batch-processing/class-astra-sites-batch-processing-elementor.php on line 110
+[08-Nov-2024 18:37:43 UTC] PHP Warning:  Array to string conversion in /Applications/MAMP/htdocs/wp-content/plugins/astra-sites/inc/importers/batch-processing/class-astra-sites-batch-processing-elementor.php on line 110
+[08-Nov-2024 18:37:43 UTC] PHP Warning:  Array to string conversion in /Applications/MAMP/htdocs/wp-content/plugins/astra-sites/inc/importers/batch-processing/class-astra-sites-batch-processing-elementor.php on line 110
+[08-Nov-2024 18:37:43 UTC] PHP Fatal error:  Uncaught Exception: Invalid data: {"data":["Array","Array","Array","Array"],"element":"Array"} in /Applications/MAMP/htdocs/wp-content/plugins/elementor/core/base/document.php:1069
+Stack trace:
+#0 /Applications/MAMP/htdocs/wp-content/plugins/astra-sites/inc/importers/batch-processing/class-astra-sites-batch-processing-elementor.php(123): Elementor\Core\Base\Document->get_elements_raw_data(Array, true)
+#1 /Applications/MAMP/htdocs/wp-content/plugins/astra-sites/inc/importers/batch-processing/class-astra-sites-batch-processing-elementor.php(66): Elementor\TemplateLibrary\Astra_Sites_Batch_Processing_Elementor->import_single_post(193)
+#2 /Applications/MAMP/htdocs/wp-content/plugins/astra-sites/inc/lib/starter-templates-importer/importer/helpers/wp-background-process-astra.php(40): Elementor\TemplateLibrary\Astra_Sites_Batch_Processing_Elementor->import()
+#3 /Applications/MAMP/htdocs/wp-content/plugins/astra-addon/classes/library/batch-processing/wp-background-process.php(288): WP_Background_Process_Astra->task(Object(Elementor\TemplateLibrary\Astra_Sites_Batch_Processing_Elementor))
+#4 /Applications/MAMP/htdocs/wp-content/plugins/astra-addon/classes/library/batch-processing/wp-background-process.php(433): WP_Background_Process->handle()
+#5 /Applications/MAMP/htdocs/wp-includes/class-wp-hook.php(324): WP_Background_Process->handle_cron_healthcheck()
+#6 /Applications/MAMP/htdocs/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#7 /Applications/MAMP/htdocs/wp-includes/plugin.php(565): WP_Hook->do_action(Array)
+#8 /Applications/MAMP/htdocs/wp-cron.php(191): do_action_ref_array('wp_image_proces...', Array)
+#9 {main}
+  thrown in /Applications/MAMP/htdocs/wp-content/plugins/elementor/core/base/document.php on line 1069
+[08-Nov-2024 18:37:44 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in /Applications/MAMP/htdocs/wp-content/plugins/astra-sites/inc/classes/class-astra-sites.php on line 2069
+[08-Nov-2024 18:42:42 UTC] PHP Fatal error:  Uncaught Error: The script tried to call a method on an incomplete object. Please ensure that the class definition "Elementor\TemplateLibrary\Astra_Sites_Batch_Processing_Elementor" of the object you are trying to operate on was loaded _before_ unserialize() gets called or provide an autoloader to load the class definition in /Applications/MAMP/htdocs/wp-content/plugins/astra-sites/inc/lib/starter-templates-importer/importer/helpers/wp-background-process-astra.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/wp-content/plugins/astra-sites/inc/lib/starter-templates-importer/importer/helpers/wp-background-process-astra.php(39): method_exists(Object(__PHP_Incomplete_Class), 'import')
+#1 /Applications/MAMP/htdocs/wp-content/plugins/astra-addon/classes/library/batch-processing/wp-background-process.php(288): WP_Background_Process_Astra->task(Object(__PHP_Incomplete_Class))
+#2 /Applications/MAMP/htdocs/wp-content/plugins/astra-addon/classes/library/batch-processing/wp-background-process.php(433): WP_Background_Process->handle()
+#3 /Applications/MAMP/htdocs/wp-includes/class-wp-hook.php(324): WP_Background_Process->handle_cron_healthcheck()
+#4 /Applications/MAMP/htdocs/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#5 /Applications/MAMP/htdocs/wp-includes/plugin.php(565): WP_Hook->do_action(Array)
+#6 /Applications/MAMP/htdocs/wp-cron.php(191): do_action_ref_array('wp_image_proces...', Array)
+#7 {main}
+  thrown in /Applications/MAMP/htdocs/wp-content/plugins/astra-sites/inc/lib/starter-templates-importer/importer/helpers/wp-background-process-astra.php on line 39
+[08-Nov-2024 18:48:01 UTC] PHP Fatal error:  Uncaught Error: The script tried to call a method on an incomplete object. Please ensure that the class definition "Elementor\TemplateLibrary\Astra_Sites_Batch_Processing_Elementor" of the object you are trying to operate on was loaded _before_ unserialize() gets called or provide an autoloader to load the class definition in /Applications/MAMP/htdocs/wp-content/plugins/astra-sites/inc/lib/starter-templates-importer/importer/helpers/wp-background-process-astra.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/wp-content/plugins/astra-sites/inc/lib/starter-templates-importer/importer/helpers/wp-background-process-astra.php(39): method_exists(Object(__PHP_Incomplete_Class), 'import')
+#1 /Applications/MAMP/htdocs/wp-content/plugins/astra-addon/classes/library/batch-processing/wp-background-process.php(288): WP_Background_Process_Astra->task(Object(__PHP_Incomplete_Class))
+#2 /Applications/MAMP/htdocs/wp-content/plugins/astra-addon/classes/library/batch-processing/wp-background-process.php(433): WP_Background_Process->handle()
+#3 /Applications/MAMP/htdocs/wp-includes/class-wp-hook.php(324): WP_Background_Process->handle_cron_healthcheck()
+#4 /Applications/MAMP/htdocs/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#5 /Applications/MAMP/htdocs/wp-includes/plugin.php(565): WP_Hook->do_action(Array)
+#6 /Applications/MAMP/htdocs/wp-cron.php(191): do_action_ref_array('wp_image_proces...', Array)
+#7 {main}
+  thrown in /Applications/MAMP/htdocs/wp-content/plugins/astra-sites/inc/lib/starter-templates-importer/importer/helpers/wp-background-process-astra.php on line 39
