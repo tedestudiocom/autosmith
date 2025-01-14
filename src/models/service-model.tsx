@@ -1,12 +1,25 @@
-export class Service {
-  name: string;
-  cover: string;
-  price: number;
-  description: string;
-  constructor(name: string, cover: string, price: number, description: string) {
-    this.name = name;
-    this.cover = cover;
-    this.price = price;
-    this.description = description;
-  }
-}
+type Service = {
+  service_id: number;
+  service_name: string;
+  service_cover: string;
+  service_charge: number;
+  service_description: string;
+  service_category: string; // Added to enable grouping
+};
+
+type GroupedServices = {
+  [key: string]: Service[];
+};
+
+const groupServicesByCategory = (services: Service[]): GroupedServices => {
+  return services.reduce((acc, service) => {
+    if (!acc[service.service_category]) {
+      acc[service.service_category] = [];
+    }
+    acc[service.service_category].push(service);
+    return acc;
+  }, {} as GroupedServices);
+};
+
+export { groupServicesByCategory };
+export type { Service };

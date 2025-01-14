@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import LoginForm from "@/components/login-form";
+import CartFlag from "@/components/cart-dialog";
+import Checkout from "@/components/checkout";
+import { UniversalProvider } from "@/context/ServicesContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +32,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
       >
-        {children}
+        {/* <div className="sticky z-50 top-0"> */}
+        {/* <LoginForm /> */}
+        {/* </div> */}
+        <UniversalProvider>{children}</UniversalProvider>
       </body>
     </html>
   );

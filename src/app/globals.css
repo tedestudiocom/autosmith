@@ -7,8 +7,12 @@
   --foreground: #171717;
 }
 
-*{
+* {
   user-select: none;
+}
+
+*::-webkit-scrollbar{
+  display: none;
 }
 
 @font-face {
@@ -60,14 +64,22 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.serviceimage{
+.serviceimage {
   box-shadow: 0 0 20px 1px #9b9b9b16;
 }
 
-#videogradient{
+#videogradient {
   background: linear-gradient(white, rgba(0, 0, 0, 0));
 }
 
-#searchbar{
+#searchbar {
   box-shadow: 0 0 20px 10px #9b9b9b16;
+}
+
+#addtocartbutton {
+  opacity: 0;
+}
+
+#servicecard:hover #addtocartbutton {
+  opacity: 1;
 }

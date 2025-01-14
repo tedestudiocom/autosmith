@@ -1,11 +1,37 @@
+"use client";
+
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import SearchBar from "@/components/search-bar";
 import ServiceCard from "@/components/service-card";
-import { defaultservice } from "@/constants/constants";
+import { useProvider } from "@/context/ServicesContext";
+import { groupServicesByCategory } from "@/models/service-model";
 import Image from "next/image";
+import { useEffect } from "react";
 
 export default function Home() {
+  const { services, setFetchedServices } = useProvider();
+  useEffect(() => {
+    const loadServices = async () => {
+      try {
+        const servicesData = await fetch("/api/services/fetchServices", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+
+        var data = await servicesData.json();
+        data = groupServicesByCategory(data);
+        setFetchedServices(data);
+      } catch (error) {}
+    };
+
+    if (services.length === 0) {
+      loadServices();
+    }
+  }, [setFetchedServices]);
+
   return (
     <main className="">
       <Header />
@@ -18,8 +44,8 @@ export default function Home() {
           </h2>
           <SearchBar></SearchBar>
           <div className="grid gap-6 grid-flow-row-dense grid-cols-4">
-            {Array.from({ length: 8 }).map((_, index) => (
-              <ServiceCard key={index} service={defaultservice} />
+            {Object.keys(services).map((_, index) => (
+              <ServiceCard key={index} service={services[_][0]} />
             ))}
           </div>
           <div className="relative items-center justify-center flex">
