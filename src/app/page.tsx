@@ -4,7 +4,7 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import SearchBar from "@/components/search-bar";
 import ServiceCard from "@/components/service-card";
-import { useProvider } from "@/context/ServicesContext";
+import { useProvider } from "@/context/UniversalContext";
 import { groupServicesByCategory } from "@/models/service-model";
 import Image from "next/image";
 import { useEffect } from "react";

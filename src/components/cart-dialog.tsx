@@ -1,6 +1,6 @@
 "use client";
 
-import { useProvider } from "@/context/ServicesContext";
+import { useProvider } from "@/context/UniversalContext";
 import { Service } from "@/models/service-model";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
@@ -18,7 +18,15 @@ export default function CartDialog({
     setCartVisible(false);
   };
 
-  const { cart, updateCart, initiateCart } = useProvider();
+  const {
+    cart,
+    updateCart,
+    initiateCart,
+  }: {
+    cart: Service[];
+    updateCart: (id: string) => {};
+    initiateCart: (data: Service[]) => {};
+  } = useProvider();
   useEffect(() => {
     const loadCart = async () => {
       try {
@@ -57,7 +65,7 @@ export default function CartDialog({
                   <p>{_.service_name}</p>
                   <p>₹{_.service_charge}</p>
                 </div>
-                <button onClick={() => updateCart(_.service_id)}>
+                <button onClick={() => updateCart(_.service_id.toString())}>
                   <img src="/icons/cross.svg" alt="" />
                 </button>
               </div>

@@ -51,7 +51,7 @@ export const UniversalProvider = ({ children }) => {
   const updateCart = async (serid) => {
     console.log("updateCart", serid);
     let updatedCart =
-      cart != null ? Array.from(cart.map((_) => _.service_id)) : [];
+      cart != null ? Array.from(cart.map((_) => _.service_id.toString())) : [];
     if (updatedCart.includes(serid)) {
       updatedCart = updatedCart.filter((id) => id !== serid);
     } else {

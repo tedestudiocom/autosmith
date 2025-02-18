@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import CartDialog from "./cart-dialog";
-import { useProvider } from "@/context/ServicesContext";
+import { useProvider } from "@/context/UniversalContext";
 
 export default function Header() {
   var [cartVisible, changeVisibility] = useState(false);

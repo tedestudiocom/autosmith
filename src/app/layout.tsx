@@ -4,7 +4,7 @@ import "./globals.css";
 import LoginForm from "@/components/login-form";
 import CartFlag from "@/components/cart-dialog";
 import Checkout from "@/components/checkout";
-import { UniversalProvider } from "@/context/ServicesContext";
+import { UniversalProvider } from "@/context/UniversalContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

@@ -1,4 +1,4 @@
-import { useProvider } from "@/context/ServicesContext";
+import { useProvider } from "@/context/UniversalContext";
 import { Service } from "@/models/service-model";
 
 export default function ServiceCard({ service }: { service: Service }) {

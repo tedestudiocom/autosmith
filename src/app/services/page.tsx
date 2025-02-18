@@ -5,7 +5,7 @@ import Header from "@/components/header";
 import SearchBar from "@/components/search-bar";
 import ServiceCard from "@/components/service-card";
 import React, { useEffect } from "react";
-import { useProvider } from "../../context/ServicesContext";
+import { useProvider } from "../../context/UniversalContext";
 import { groupServicesByCategory, Service } from "@/models/service-model";
 
 export default function Services() {
